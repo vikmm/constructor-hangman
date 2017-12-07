@@ -1,0 +1,23 @@
+{
+  "name": "constructor-hangman",
+  "version": "1.0.0",
+  "description": "create a hangman game using constructors for homework",
+  "main": "hangman.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vikmm/constructor-hangman.git"
+  },
+  "keywords": [
+    "hangman",
+    "constructors"
+  ],
+  "author": "Victor Montemayor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vikmm/constructor-hangman/issues"
+  },
+  "homepage": "https://github.com/vikmm/constructor-hangman#readme"
+}
