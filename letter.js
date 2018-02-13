@@ -1,9 +1,8 @@
-
-//constructor for letter function
 var Letter = function(letter){
   this.current = "_"
 	this.theLetters = letter;
-	//letter appears
+	
+	//Shows letter
 	this.showsLetter = false;
 	this.letterin = function(letter){
 		if(this.theLetters == letter){
@@ -12,7 +11,7 @@ var Letter = function(letter){
 		}
 			return false;
 	}
-//method for the "_" to appear
+
 	this.letterShows = function(){
 		return this.current;
 	}

@@ -13,7 +13,7 @@ console.log("**************************************")
 	prompt.start();
 	BeginGame(userGuess);
 
-  //starting the game allowing user guess and letting the user know
+  //User guesses the word
 
 		function BeginGame(guesses){
 			console.log("Guesses left: " + guesses);
@@ -27,15 +27,14 @@ console.log("**************************************")
 				return;
 			}
 
-		// displaying "_"
+		// Empty slots printed in terminal 
 		console.log(hangmanGame.currentWord.display());
 
 	prompt.get(["theGuess"], function(err, result){
 		if(err){
 			return err;
 		}
-		//boolean for comparison
-		//removes a guess if user is wrong
+		
 		if(hangmanGame.currentWord.letterFound(result.theGuess) == false){
 			guesses --;
 		}

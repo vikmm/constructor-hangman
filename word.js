@@ -1,8 +1,7 @@
-//Word Logic constructor
+//Requires the letter.js file 
 var Letter = require('./letter.js');
 
 var Word = function(words){
-	//empty array variables
 	this.words = words;
 	this.guessedWord = [];
 	this.youWin = false;
@@ -17,7 +16,6 @@ var Word = function(words){
 		}
 	}
 	this.grabLetters();
-//grabbing letters to guess from array
 	this.letterFound = function(guessLetter){
 		for(var i = 0; i <this.guesses.length; i++){
 			if(guessLetter == this.guesses[i]){
@@ -39,7 +37,7 @@ var Word = function(words){
 		return added;
 
 	}
-	//function for comparing words
+	//Comparing words in cuisine list
  	this.comparingWords = function(){
  		for(var i = 0; i < this.words.length; i++){
  			if(this.words.charAt(i) != this.guessedWord[i].current){
@@ -48,7 +46,7 @@ var Word = function(words){
  		}
  				return true;
  	}
-//display empty string
+
 	this.display = function(){
 		var eString = "";
 

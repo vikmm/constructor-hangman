@@ -1,4 +1,4 @@
-//constructor function selection random word
+//Random word coming from the word.js file
 var Word = require("./word.js");
 
 
