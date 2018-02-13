@@ -1,39 +1,45 @@
-//Created the require of the npm package inquirer
-var inquirer = require('inquirer');
+var prompt = require("prompt");
+var Game = require('./game.js');
+var hangmanGame = new Game();
+var userGuess = 10;
 
 
-//Splitting my words to count letter and separate each letter
-var hangmanWord = function(word,category) {
-	this.splitWord = word.split('');
-	this.category = category;
-	this.word = word;
-	//this.checkSpaces = this.splitWord.indexOf (" ");
+//Introduction to the game 
+console.log("**************************************")
+console.log("WELCOME TO FOODIE HANGMAN")
+console.log(" ")
+console.log("Guess a type of cuisine!")
+console.log("**************************************")
+	prompt.start();
+	BeginGame(userGuess);
+
+  //starting the game allowing user guess and letting the user know
+
+		function BeginGame(guesses){
+			console.log("Guesses left: " + guesses);
+			if(hangmanGame.currentWord.comparingWords() == true){
+				console.log("You win!!!! The cuisine was: " + hangmanGame.randomWord);
+				return;
+			}
+			//user out of guesses and game over
+			if(guesses <= 0){
+				console.log("Game Over! You are out of guesses");
+				return;
+			}
+
+		// displaying "_"
+		console.log(hangmanGame.currentWord.display());
+
+	prompt.get(["theGuess"], function(err, result){
+		if(err){
+			return err;
+		}
+		//boolean for comparison
+		//removes a guess if user is wrong
+		if(hangmanGame.currentWord.letterFound(result.theGuess) == false){
+			guesses --;
+		}
+		BeginGame(guesses);
+
+	});
 }
-
-//Var's of my words and what genre it falls under
-var firstWord = new hangmanWord ("Beatles", "Rock n Roll");
-var secondWord = new hangmanWord ("Beck", "Rock Band");
-var thirdWord = new hangmanWord ("Devo", "Rock Band");
-var fourthWord = new hangmanWord ("Kiss", "Rock n Roll");
-
-//
-var wordArray = [firstWord, secondWord, thirdWord, fourthWord];
-
-console.log (firstWord);
-
-console.log (firstWord.splitWord.length);
-
-//*My code stopped working here, I attemted to create my intro to the game
-//and select a random word from my list
-
-// function intro(){
-// 	console.log("Hello welcome to Rock n Roll Hangman")
-// 	inquirer.prompt([{
-
-// // 	}]).then(function(answer)){}
-
-// // } 
-
-// // function hangMan(){
-// // 	var selectedWord = wordArray[i].word
-// // }

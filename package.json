@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/vikmm/constructor-hangman/issues"
   },
-  "homepage": "https://github.com/vikmm/constructor-hangman#readme"
+  "homepage": "https://github.com/vikmm/constructor-hangman#readme",
+  "dependencies": {
+    "prompt": "^1.0.0"
+  }
 }
